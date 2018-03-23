@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="<%= projectName %>">
+    <meta name="description" content="<%= projectName %>">
+    <title><%= projectName %></title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="ui-page">
+    <!-- 头部 -->
+    <div class="ui-header"></div>
+    <!-- 内容区域 -->
+    <div class="ui-wrap">
+        
+    </div>
+    <div class="ui-bg">
+        <div class="lazyload" data-lazy="http://ossweb-img.qq.com/images/qqgame/act/a20171225sd/bg_1.jpg"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://ossweb-img.qq.com/images/js/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" charset="gb2312" src="http://qqgame.qq.com/public/footer/footer_pt.js?c=b" id="lib_js_footer"></script>
+<script type="text/javascript" charset="gb2312" src="http://qqgame.qq.com/public/topbar/qgtb.js"></script>
+<script src="http://ossweb-img.qq.com/images/wan/script/webserver.js" type="text/javascript"></script>
+<script src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script>
+    if(typeof(pgvMain) == 'function') pgvMain();
+    //    pgvSendClick({hottag:'act.plat.a20171225sd.dj1'});
+    function gotoGame(protocal){
+        $("#aBtn").attr("href",protocal);
+        setTimeout(function(){
+            openDialog('showMsg');
+        },200)
+    }
+    function openDialog(e){
+        need("biz.dialog",function(Dialog){
+            Dialog.show({
+                id:e,
+                bgcolor:'#000', //弹出“遮罩”的颜色，格式为"#FF6600"，可修改，默认为"#fff"
+                opacity:70      //弹出“遮罩”的透明度，格式为｛10-100｝，可选
+            });
+        });
+    }
+    //关闭弹框
+    function closeDialog(){
+        need("biz.dialog",function(Dialog){
+            Dialog.hide();
+        });
+    }
+    // milo.ready(function(){
+    //        need("biz.login",function(LoginManager){
+    //            LoginManager.checkLogin(function(){
+    //                //nothing..
+    //            },function(){
+    //                LoginManager.login();
+
+    //            });
+    //        });
+    //    });
+    
+    var detected, hasplugin;
+    function gotoGame(protocal, id){
+
+        if(!detected  && !hasplugin){
+            $("#aBtn").attr('href',protocal);
+            setTimeout(function(){
+                openDialog('showMsg');
+            },100);
+            return true;
+        }else if(detected  && !hasplugin){
+            window.location.href = "http://dldir3.qq.com/minigamefile/QQGame_setup_2.0web_11.EXE";
+        }else if(detected  && hasplugin){
+            window.location.href = protocal;
+        }
+        pgvSendClick({hottag:'act.plat.a20171225sd.'+id});
+
+    }
+    // 检查是否安装大厅
+    // gotoGame('qqgameprotocol:///activemainwindow', 'down');
+    
+    // 检测是否有插件，是否安装大厅
+    webserver.getQQGameVersion(function(ret)
+    {
+        detected = true;
+        // 安装大厅
+        if(ret.ret != 14)
+        {
+            hasplugin = true;
+        }else  //未安装大厅
+        {
+            hasplugin = false;
+        }
+    },function(err){
+        console.log('3333333')
+    });
+</script>
+
+</body>
+</html>

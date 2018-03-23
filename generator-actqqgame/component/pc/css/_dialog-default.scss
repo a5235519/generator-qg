@@ -1,0 +1,94 @@
+
+//下载弹框
+.dialog { width: 380px; position: relative; z-index: 150; font-size: 12px;}
+.dialog-title {font-weight: bold; color: #757d7f;height: 31px;line-height: 31px; margin-left: 6px;margin-right: 6px;padding-left: 6px;border-bottom: 1px solid #e1e1e1;font-size: 14px;}
+.dialog-header,.dialog-header-r,.dialog-footer-r,.dialog-footer {height: 32px;background: url(http://danji.3366.com/images/index/dialog_spr.png) 0 0 no-repeat;}
+.dialog-footer {height: 20px;background-position: 0 -180px;}
+.dialog-footer-r {height: 20px;background-position: right -240px;margin-left: 5px;}
+.dialog-header {position: relative;}
+.dialog-header-r {background-position: right -80px;margin-left: 5px;}
+.dialog-close {position: absolute;width: 30px;height: 30px;line-height: 30px;text-align: center;color: #aab2b6;font-weight: bold;text-decoration: none;font-size: 18px;right: 0;top: 0;}
+.dialog-close:hover{ text-decoration:none;}
+.dialog-body {background-color: #fff;border: 1px solid #e1e1e1;border-width: 0 1px;color: #757d7f;}
+.dialog-msg {padding: 15px 30px;}
+.dialog-msg-icon {float: left;display: inline;width: 40px;height: 40px;background: url(http://danji.3366.com/images/index/dialog_spr.png) -60px -280px no-repeat;margin-right: 10px;}
+.dialog-msg-fail .dialog-msg-icon {background-position: 0 -280px;}
+.dialog-msg-content {overflow: hidden;*zoom: 1;padding-left: 10px;border-left: 1px solid #e1e1e1;}
+.dialog-btnbar {text-align: center;}
+.dialog-btn,.dialog-btn-inner {display: inline-block;height: 26px;background: url(http://danji.3366.com/images/index/dialog_spr.png) -440px -280px no-repeat;cursor:pointer;}
+.dialog-btn {padding-left: 18px;color: #fff;font-weight: bold;text-decoration: none;}
+.dialog-btn:hover{ text-decoration:none;}
+.dialog-btn-inner {padding-right: 18px;line-height: 26px;background-position: right -280px;}
+.dialog em {color: #ff8941;font-style:normal;}
+.dialog-tips {text-align: center;}
+.dialog-hall {width: 584px;}
+.dialog-hall .dialog-msg {padding-left: 70px;padding-right: 70px;padding-top: 20px;}
+.dialog-hall .dialog-msg-title {color: #84a0cb;font-size: 24px;line-height: 1.1;margin-bottom: 6px;}
+.dialog-hall .dialog-btnbar {padding-top: 20px;padding-bottom: 10px;}
+.dialog-btn-xlarge {padding-left: 35px;height: 71px;background-position: -240px -340px;margin-left: 4px;margin-right: 4px;padding-left: 0;width: 216px;height: 72px;}
+.dialog-btn-xlarge .dialog-btn-title,.dialog-btn-xlarge .dialog-btn-text {display: block;line-height: 1.5;overflow: hidden;text-overflow: ellipsis;    white-space: nowrap;}
+.dialog-btn-xlarge .dialog-btn-title {margin-top: 12px;font-size: 16px;margin-bottom: 4px;}
+.dialog-btn-xlarge .dialog-btn-text {display: block;font-weight: normal;color: #e8e8e8;line-height: 1.5;}
+.dialog-btn-large {height: 60px;background-position: 0 -340px;}
+.dialog-btn-large .dialog-btn-title {margin-top: 16px;}
+
+/*pop*/
+.pop{ display:none; position:relative; background:url(http://ossweb-img.qq.com/images/qqgame/act/a20150114hj/pop-bg.png) no-repeat; width:317px; height:428px; text-align:center; color:#ffffff; font-size:14px; line-height:24px;}
+.pop .close{ display:block; position:absolute; top:-18px; right:15px; background:url(http://ossweb-img.qq.com/images/qqgame/act/a20150114hj/pop-close.png) no-repeat; width:43px; height:43px;text-indent:-999px; overflow:hidden;}
+.pop .photo{ padding:40px 0 30px 0;}
+.pop .tit{ font-size:16px; font-weight:bold;}
+.pop .code{ margin-top:30px;}
+.pop .code-text{ font-size:12px; color:#fdcc77; font-weight:bold;}
+/*pop - layout*/
+.ui_pop{ display:none; width:462px;position:relative;background-color:#fff;font:12px/1.5 Tahoma,simsun,Arial,"Microsoft Yahei",sans-serif;color:#9e9e9e;}
+.ui_pop_clz,.ui_pop_btn,.ui_pop_btn span,.ui_pop_prize li,.ui_pop_msg .ico_state{background:url(http://ossweb-img.qq.com/images/qqgame/act/public/gl_pop_sp_v1.0.png) no-repeat;}
+.ui_pop_hd{height:49px;line-height:49px;border-bottom:1px solid #e2e2e2;}
+.ui_pop_bd{padding:25px 15px;}
+.ui_pop_ft{padding:0 20px 35px 20px;}
+.ui_pop em{color:#077d9e;font-style:normal;font-weight:normal;}
+.ui_pop ul{list-style:none;}
+.ui_pop_tit{font-weight:normal;padding-left:18px;font-size:17px;font-family:"Microsoft yahei";color:#4c4c4c;_font-weight:bold;}
+.ui_pop_clz{display:block;position:absolute;right:0;top:0;width:49px;height:38px;background-position:0 -206px;text-indent:-9999em;overflow:hidden;}
+.ui_pop_clz:hover{background-position:-53px -206px;}
+/*msg*/
+.ui_pop_msg{overflow:hidden;*zoom:1;padding:18px 15px 34px 15px;}
+.ui_pop_msg .ico_state{float:left;width:42px;height:42px;margin-left:25px;_display:inline;margin-right:8px;}
+.ui_pop_msg .ico_succ{background-position:0 -160px;}
+.ui_pop_msg .ico_fail{background-position:-46px -160px;}
+.ui_pop_msg_con{overflow:hidden;*zoom:1;padding:3px 0 0 9px;}
+.ui_pop_msg_tit{color:#029bc6;font-size:14px;font-weight:bold;}
+/*btn*/
+.ui_pop_ctr{text-align:center;margin-bottom:15px;}
+.ui_pop_ctr_extend{margin-bottom:0;}
+.ui_pop_btn{display:inline-block;padding-left:35px;font-size:15px;font-weight:bold;color:#fff;text-decoration:none;background-position:0 0;margin-right:10px;}
+.ui_pop_btn span{display:inline-block;padding-right:35px;height:37px;line-height:37px;cursor:pointer;background-position:right 0;}
+.ui_pop_btn_clz{background-position:0 -80px;color:#999;}
+.ui_pop_btn_clz span{background-position:right -80px;}
+.ui_pop_btn:hover{background-position:0 -40px;}
+.ui_pop_btn:hover span{background-position:right -40px;}
+.ui_pop_btn_clz:hover{background-position:0 -120px;}
+.ui_pop_btn_clz:hover span{background-position:right -120px;}
+/*gift*/
+.ui_pop_gift{width:100%;border:1px solid #e2e2e2;text-align:center;border-collapse:collapse;border-spacing:0;}
+.ui_pop_gift a{text-decoration:underline;color:#029bc6;}
+.ui_pop_gift th{font-weight:bold;color:#878787;border-bottom:1px solid #e2e2e2;padding:10px 0;background:#fcfcfc;}
+.ui_pop_gift td{border-bottom:1px solid #f2f2f2;padding:10px 0;}
+.ui_pop_gift_split td{background-color:#fdfdfd;}
+.ui_pop_gift_page a{margin:0 5px;}
+/*user info*/
+.ui_pop_info{padding:10px 0 17px 28px;}
+.ui_pop_info li{margin-bottom:6px;line-height:30px;}
+.ui_pop_info label{display:inline-block;width:90px;margin-right:5px;text-align:right;vertical-align:middle;}
+.ui_pop_info label i{font-style:normal;color:#fe7b1b;margin-right:3px;}
+.ui_pop_info input{width:240px;line-height:18px;height:18px;padding:6px 10px;border:1px solid #d2d2d2;vertical-align:middle;color:#9e9e9e;;}
+.ui_pop_info input:focus{border-color:#4cd3f8;outline:none;}
+.ui_pop_info select{width:100px;height:22px;margin-right:5px;vertical-align:middle;color:#898989;border:1px solid #d2d2d2;}
+/*prize*/
+.ui_pop_prize{padding:6px 22px 0 22px;color:#898989;padding-bottom:16px;margin-bottom:15px;border-bottom:1px dotted #ccc;}
+.ui_pop_prize ul{overflow:hidden;*zoom:1;}
+.ui_pop_prize li{float:left;width:97px;height:30px;line-height:30px;background-position:-155px -166px;padding-left:10px;overflow:hidden;}
+.ui_pop_list{ font-size:14px;}
+.ui_pop_list li{ margin-bottom:8px;}
+
+/*弹框背景*/
+#_overlay_{border-top-width: 1px; border-top-style: solid; border-top-color: rgb(230, 245, 255); position:fixed; height:100%; z-index: 9998; width: 100%; left: 0px; top: 0px; opacity: 0.7; display: block; background-color: rgb(0, 0, 0);display: none;filter:alpha(opacity=70);}

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title><%= projectName %></title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script>
+        window.addEventListener('resize', resize, false);
+        function resize() {
+            var html = document.documentElement;
+            var k = html.clientWidth;
+            if(k>=720){
+                k = 720;
+            }
+            html.style.fontSize = k / 15 + "px";
+        }
+        resize();
+    </script>
+</head>
+<body>
+
+<div class="ui-page">
+    
+</div>
+
+<script type="text/javascript" src="http://ossweb-img.qq.com/images/js/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" charset="gb2312" src="http://qqgame.qq.com/public/footer/footer_pt.js?c=b" id="lib_js_footer"></script>
+<script type="text/javascript" charset="gb2312" src="http://qqgame.qq.com/public/topbar/qgtb.js"></script>
+<script src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script>
+    if(typeof(pgvMain) == 'function') pgvMain();
+    //    pgvSendClick({hottag:'act.plat.a20171225sd.dj1'});
+</script>
+
+</body>
+</html>
