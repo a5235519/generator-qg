@@ -1,0 +1,12 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp prd",
+    "prod": "gulp prd --prod"
+  },
+  "author": "",
+  "license": "ISC"
+}

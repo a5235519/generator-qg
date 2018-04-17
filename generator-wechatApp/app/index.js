@@ -6,7 +6,7 @@ var generators = require('yeoman-generator'),
     fs = require('fs'),
     del = require('del'),
     Exec = require('child_process').exec,
-    generatorName = 'actqqgame';
+    generatorName = 'wechatApp';
 
 var isFile = false;
 
@@ -27,26 +27,10 @@ module.exports = generators.Base.extend({
     prompting: function(){
         var questions = [
             {
-                name: 'projectAssets',
-                type: 'list',
-                message: '请选择模板:',
-                choices: [
-                    {
-                        name: 'PC专题模版',
-                        value: 'pc',
-                        checked: true   // 默认选中
-                    },
-                    {
-                        name: '移动端专题模版',
-                        value: 'mobile'
-                    }
-                ]
-            },
-            {
                 type: 'input',
                 name: 'projectID',
                 message: '输入项目ID',
-                default: this.appname
+                default: 'wechatApp'
             },
             {
                 type: 'input',
@@ -73,7 +57,7 @@ module.exports = generators.Base.extend({
     // 拷贝文件，搭建脚手架
     writing: function(){
         // 不在项目环境
-        this.projectOutput = './act-project/'+this.projectID;
+        this.projectOutput = './'+this.projectID;
         isFile = fs.existsSync(this.projectOutput);
 
         if(isFile){
@@ -88,7 +72,7 @@ module.exports = generators.Base.extend({
         }
 
         // 活动专题模版解析
-        this.directory(this.projectAssets, this.projectOutput);        
+        this.directory('./', this.projectOutput);
     },
 
     // 搭建完执行操作
@@ -96,25 +80,21 @@ module.exports = generators.Base.extend({
         if(isFile){
             return false;
         }
-        var _pArr = __dirname.match(/(\S*)generator-actqqgame/)[0].split('\\');
+        var _pArr = __dirname.match(/(\S*)generator-wechatApp/)[0].split('\\');
         var _popped = _pArr.pop();
         var dirPath = _pArr.join('\\');
 
         del([this.projectOutput+'/**/.gitignore',this.projectOutput+'/**/.npmignore',this.projectOutput+'/**/**/.npmignore']);
-        var dirs = glob.sync(`${process.cwd()}/act-project/+(node_modules)`);
-        if(dirs.length != 0){
-            console.log('项目node_modules软链已存在')
-        }else{
-            console.log('软链接创建中')
-            //创建软连接
-            var command = `mklink /d ${process.cwd()}\\act-project\\node_modules ${dirPath}\\common-packages\\${generatorName}\\node_modules`
-            console.log(command)
-            Exec(command, function(e, stdout, stderr) {
-            　　if(!e) {
-                    console.log('node_modules软链创建成功')
-            　　}
-            });
-        }
+
+        console.log('软链接创建中', process.cwd())
+        //创建软连接
+        var command = `mklink /d ${process.cwd()}\\${this.projectID}\\node_modules ${dirPath}\\common-packages\\${generatorName}\\node_modules`
+        console.log(command)
+        Exec(command, function(e, stdout, stderr) {
+        　　if(!e) {
+                console.log('node_modules软链创建成功')
+        　　}
+        });
     }
 })
 
